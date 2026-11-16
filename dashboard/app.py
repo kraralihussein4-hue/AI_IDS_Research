@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.detection.predict import predict_traffic
+from src.detection.predict import predict_traffic, load_model
 
 EXP = ROOT / "experiments" / "random_forest_binary"
 
@@ -616,6 +616,43 @@ elif page == "AI Detection":
             f"{metrics['training_rows']:,}",
         )
 
+    section("Download CSV Template")
+
+    @st.cache_resource
+    def get_model_feature_names():
+        model = load_model()
+        if not hasattr(model, "feature_names_in_"):
+            raise ValueError(
+                "The saved model does not expose feature_names_in_. "
+                "Please verify the trained model."
+            )
+        return list(model.feature_names_in_)
+
+    try:
+        model_feature_names = get_model_feature_names()
+
+        template_data = pd.DataFrame(
+            [{feature: 0 for feature in model_feature_names}]
+        )
+
+        st.download_button(
+            label="Download CSV Template (78 Features)",
+            data=template_data.to_csv(index=False).encode("utf-8"),
+            file_name="AI_IDS_78_Features_Template.csv",
+            mime="text/csv",
+            use_container_width=True,
+            help="Downloads a CSV containing the exact feature names expected by the saved model.",
+        )
+
+        st.info(
+            "Download this template, replace the placeholder zeros with "
+            "real network-traffic feature values, then upload the completed "
+            "CSV below. The zeros are placeholders and are not real traffic."
+        )
+
+    except Exception as error:
+        st.error(f"Could not create the CSV template: {error}")
+
     section("Upload Network Traffic")
 
     uploaded_file = st.file_uploader(
@@ -637,6 +674,10 @@ elif page == "AI Detection":
                 uploaded_file,
                 low_memory=False,
             )
+
+            if uploaded_data.empty:
+                st.error("The uploaded CSV file contains no data rows.")
+                st.stop()
 
             st.write(
                 f"Records: {len(uploaded_data):,} | "
