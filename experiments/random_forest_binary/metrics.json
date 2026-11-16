@@ -1,0 +1,16 @@
+{
+    "model": "Random Forest",
+    "task": "Binary Classification",
+    "training_rows": 200000,
+    "testing_rows": 564745,
+    "features": 78,
+    "accuracy": 0.9987268590248697,
+    "balanced_accuracy": 0.9978113884432906,
+    "precision_attack": 0.9971683215044199,
+    "recall_attack": 0.9963092938690752,
+    "f1_attack": 0.9967386226010279,
+    "macro_f1": 0.9979738352386415,
+    "roc_auc": 0.9999241077857955,
+    "average_precision": 0.9997179222512083,
+    "training_and_evaluation_seconds": 53.62
+}

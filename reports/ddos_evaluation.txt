@@ -1,0 +1,19 @@
+AI-IDS Research Project
+DDoS Detection Evaluation
+Dataset: CICIDS2017
+Model: Random Forest
+Classification: Binary (BENIGN / ATTACK)
+
+Total Records: 225745
+
+True Positive (TP): 127905
+False Positive (FP): 84
+True Negative (TN): 97634
+False Negative (FN): 122
+
+Accuracy: 99.9087%
+
+Evaluation Note:
+The model successfully detected most attack records.
+A small number of false positive and false negative predictions
+were observed during the DDoS evaluation.

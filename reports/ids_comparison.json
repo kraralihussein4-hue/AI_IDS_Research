@@ -1,0 +1,32 @@
+{
+  "random_forest": {
+    "evaluation_type": "Held-out test dataset",
+    "accuracy": 0.9987268590,
+    "precision": 0.9971683215,
+    "recall": 0.9963092939,
+    "f1_score": 0.9967386226,
+    "roc_auc": 0.9999241078,
+    "testing_rows": 564745,
+    "features": 78,
+    "evaluation_seconds": 53.62
+  },
+  "snort": {
+    "version": "3.13.2.0",
+    "evaluation_type": "Synthetic PCAP functional test",
+    "packets_received": 5,
+    "packets_analyzed": 5,
+    "alerts": 1,
+    "runtime_seconds": 0.040347,
+    "signature_id": 1000001
+  },
+  "suricata": {
+    "version": "8.0.8",
+    "evaluation_type": "Synthetic PCAP functional test",
+    "packets_received": 5,
+    "packets_analyzed": 5,
+    "alerts": 1,
+    "runtime_seconds": null,
+    "signature_id": 1000001
+  },
+  "methodology_note": "Random Forest metrics come from a held-out dataset. Snort and Suricata results are functional detection tests using the same synthetic PCAP. Their accuracy, precision, recall and F1-score are not directly comparable."
+}

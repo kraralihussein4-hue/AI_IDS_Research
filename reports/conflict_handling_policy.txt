@@ -1,0 +1,12 @@
+AI-Based IDS - Conflict Handling Policy
+
+1. Original raw and processed datasets must remain unchanged.
+2. Conflicting feature groups are documented in the exclusion manifest.
+3. These groups are excluded from the primary supervised training
+   and evaluation dataset until their labels can be independently verified.
+4. No majority-vote relabeling is performed.
+5. The excluded records must be reported transparently in the research.
+6. Any future verification using PCAP evidence must be documented.
+
+This policy is a research safeguard, not a claim that any conflicting
+label is necessarily incorrect.

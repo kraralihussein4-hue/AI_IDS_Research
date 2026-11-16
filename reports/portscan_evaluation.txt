@@ -1,0 +1,13 @@
+PORTSCAN EVALUATION
+Total Records: 286467
+TN: 127296
+FP: 241
+FN: 34
+TP: 158896
+Accuracy: 99.9040%
+Balanced Accuracy: 99.8948%
+Precision: 99.8486%
+Recall: 99.9786%
+F1-score: 99.9135%
+False Positive Rate: 0.1890%
+False Negative Rate: 0.0214%

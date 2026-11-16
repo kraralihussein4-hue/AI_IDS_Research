@@ -1,0 +1,43 @@
+﻿# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Dataset files
+data/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Large temporary reports
+reports/group_split_indices.csv
+reports/ddos_detection_result.csv.csv
+reports/portscan_detection_results.csv.csv
+
+# Dashboard backup
+dashboard/app_backup_before_comparison.py
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

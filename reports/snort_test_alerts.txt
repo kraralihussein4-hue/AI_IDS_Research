@@ -1,0 +1,233 @@
+--------------------------------------------------
+o")~   Snort++ 3.13.2.0
+--------------------------------------------------
+Loading /usr/local/etc/snort/snort.lua:
+Loading snort_defaults.lua:
+Finished snort_defaults.lua:
+	ips
+	file_inspect
+	classifications
+	references
+	binder
+	smtp
+	port_scan
+	dce_http_server
+	output
+	active
+	ssl
+	daq
+	decode
+	host_cache
+	host_tracker
+	hosts
+	network
+	packets
+	process
+	search_engine
+	stream_udp
+	stream
+	stream_ip
+	stream_icmp
+	stream_tcp
+	stream_user
+	stream_file
+	arp_spoof
+	back_orifice
+	dns
+	imap
+	netflow
+	normalizer
+	pop
+	rpc_decode
+	sip
+	socks
+	ssh
+	telnet
+	cip
+	dnp3
+	iec104
+	mms
+	modbus
+	opcua
+	s7commplus
+	dce_smb
+	dce_tcp
+	dce_udp
+	dce_http_proxy
+	gtp_inspect
+	ftp_server
+	ftp_client
+	ftp_data
+	http_inspect
+	http2_inspect
+	alerts
+	file_policy
+	js_norm
+	appid
+	wizard
+Finished /usr/local/etc/snort/snort.lua:
+Loading file_inspect.rules_file:
+Loading file_magic.rules:
+Finished file_magic.rules:
+Finished file_inspect.rules_file:
+Loading rule args:
+Loading /usr/local/etc/snort/local.rules:
+Finished /usr/local/etc/snort/local.rules:
+Finished rule args:
+--------------------------------------------------
+ips policies rule stats
+              id  loaded  shared enabled    file
+               1     220       0     220    /usr/local/etc/snort/snort.lua
+--------------------------------------------------
+rule counts
+       total rules loaded: 220
+               text rules: 220
+            option chains: 220
+            chain headers: 2
+--------------------------------------------------
+service rule counts          to-srv  to-cli
+                  file_id:      219     219
+                     http:        1       0
+                    http2:        1       0
+                    http3:        1       0
+                    total:      222     219
+--------------------------------------------------
+fast pattern groups
+                to_server: 4
+                to_client: 1
+--------------------------------------------------
+search engine (ac_bnfa)
+                instances: 5
+                 patterns: 441
+            pattern chars: 2644
+               num states: 1874
+         num match states: 395
+             memory scale: KB
+             total memory: 75.7021
+           pattern memory: 19.8037
+        match list memory: 28.8594
+        transition memory: 26.4141
+appid: MaxRss diff: 2816
+appid: patterns loaded: 300
+--------------------------------------------------
+pcap DAQ configured to read-file.
+Commencing packet processing
+Retry queue interval is: 200 ms
+++ [0] /home/krar/ids-test/test_traffic.pcap
+11/08-17:58:09.290631 [**] [1:1000001:1] "AI-IDS LAB - HTTP Test Request Detected" [**] [Priority: 0] {TCP} 192.0.2.10:45678 -> 198.51.100.20:80
+-- [0] /home/krar/ids-test/test_traffic.pcap
+--------------------------------------------------
+Packet Statistics
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 5
+                 analyzed: 5
+                    allow: 5
+                 rx_bytes: 250
+--------------------------------------------------
+codec
+                    total: 5           	(100.000%)
+                     ipv4: 5           	(100.000%)
+                      tcp: 5           	(100.000%)
+--------------------------------------------------
+Module Statistics
+--------------------------------------------------
+ac_bnfa
+                 searches: 1
+                  matches: 1
+                    bytes: 13
+--------------------------------------------------
+ac_full
+                 searches: 5
+                  matches: 2
+                    bytes: 99
+--------------------------------------------------
+appid
+                  packets: 5
+        processed_packets: 4
+          ignored_packets: 1
+           total_sessions: 1
+       service_cache_adds: 1
+             bytes_in_use: 112
+             items_in_use: 1
+--------------------------------------------------
+binder
+              raw_packets: 1
+                new_flows: 1
+          service_changes: 1
+                 inspects: 2
+--------------------------------------------------
+detection
+                 analyzed: 5
+             pdu_searches: 1
+                   alerts: 1
+             total_alerts: 1
+                   logged: 1
+                buf_dumps: 1
+--------------------------------------------------
+http_inspect
+                    flows: 1
+                    scans: 2
+              reassembles: 2
+              inspections: 2
+                 requests: 1
+             get_requests: 1
+  max_concurrent_sessions: 1
+              total_bytes: 44
+--------------------------------------------------
+ips_actions
+                    alert: 1
+--------------------------------------------------
+port_scan
+                  packets: 5
+                 trackers: 2
+--------------------------------------------------
+search_engine
+               max_queued: 1
+            total_flushed: 1
+            total_inserts: 1
+             total_unique: 1
+         qualified_events: 1
+--------------------------------------------------
+stream
+                    flows: 1
+         no_flow_unwanted: 1
+    released_max_flow_mem: 3297
+  released_total_flow_mem: 3191
+--------------------------------------------------
+stream_tcp
+                 sessions: 1
+                      max: 1
+                  created: 1
+                 released: 1
+             instantiated: 1
+                   setups: 1
+                 restarts: 1
+         syn_ack_trackers: 1
+              segs_queued: 1
+            segs_released: 1
+                segs_used: 1
+          rebuilt_packets: 2
+            rebuilt_bytes: 50
+                 syn_acks: 1
+                 max_segs: 1
+                max_bytes: 50
+--------------------------------------------------
+wizard
+                tcp_scans: 1
+                 tcp_hits: 1
+--------------------------------------------------
+Appid Statistics
+--------------------------------------------------
+detected apps and services
+              Application: Services   Clients    Users      Payloads   Misc       Referred  
+                  unknown: 1          0          0          1          0          0         
+--------------------------------------------------
+Summary Statistics
+--------------------------------------------------
+timing
+                  runtime: 00:00:00
+                  seconds: 0.040347
+                 pkts/sec: 124
+o")~   Snort exiting
