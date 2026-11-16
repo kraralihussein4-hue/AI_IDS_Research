@@ -653,6 +653,47 @@ elif page == "AI Detection":
     except Exception as error:
         st.error(f"Could not create the CSV template: {error}")
 
+    # =====================================================
+    # DOWNLOAD REAL CICIDS2017 SAMPLE DATASETS
+    # =====================================================
+
+    section("Download Sample Datasets")
+
+    st.markdown(
+        """
+        Download real CICIDS2017 network traffic samples
+        and upload them below to test the AI detection model.
+        The Label column is included for reference and is ignored
+        automatically by the prediction pipeline.
+        """
+    )
+
+    sample_dir = ROOT / "dashboard" / "sample_data"
+
+    sample_files = [
+        ("BENIGN.csv", "Download BENIGN Sample"),
+        ("ATTACK.csv", "Download ATTACK Sample"),
+        ("MIXED.csv", "Download MIXED Sample"),
+    ]
+
+    sample_cols = st.columns(3)
+
+    for col, (filename, button_label) in zip(sample_cols, sample_files):
+        file_path = sample_dir / filename
+
+        with col:
+            if file_path.is_file():
+                st.download_button(
+                    label=button_label,
+                    data=file_path.read_bytes(),
+                    file_name=filename,
+                    mime="text/csv",
+                    use_container_width=True,
+                    key=f"download_sample_{filename}",
+                )
+            else:
+                st.warning(f"{filename} is unavailable.")
+
     section("Upload Network Traffic")
 
     uploaded_file = st.file_uploader(
